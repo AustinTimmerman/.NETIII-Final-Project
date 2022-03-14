@@ -1,0 +1,70 @@
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayerTests.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayerTests.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessFakes.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessInterfaces.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataObjects.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayer.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessFakes.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataObjects.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayer.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csprojAssemblyReference.cache
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CoreCompileInputs.cache
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CopyComplete
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayerTests.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayerTests.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessFakes.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessInterfaces.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataObjects.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessFakes.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataObjects.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\LogicLayer.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csprojAssemblyReference.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CopyComplete
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\obj\Debug\LogicLayerTests.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayerTests\bin\Debug\DataAccessLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\LogicLayerTests.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\LogicLayerTests.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessFakes.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessInterfaces.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataObjects.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\LogicLayer.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessLayer.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessFakes.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataObjects.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\LogicLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\bin\Debug\DataAccessLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\obj\Debug\LogicLayerTests.csprojAssemblyReference.cache
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CoreCompileInputs.cache
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\obj\Debug\LogicLayerTests.csproj.CopyComplete
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\obj\Debug\LogicLayerTests.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayerTests\obj\Debug\LogicLayerTests.pdb

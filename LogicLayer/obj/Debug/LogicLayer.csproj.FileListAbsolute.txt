@@ -1,0 +1,60 @@
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessFakes.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataObjects.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessFakes.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataObjects.pdb
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\austi\OneDrive\Desktop\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessFakes.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataObjects.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessFakes.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\bin\Debug\DataObjects.pdb
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessFakes.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataObjects.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessFakes.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataObjects.pdb
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\nh229u27\Documents\NETII-FinalProject-main\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessFakes.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessInterfaces.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataObjects.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessFakes.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessInterfaces.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\bin\Debug\DataObjects.pdb
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csproj.AssemblyReference.cache
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NETII-FinalProject-main\LogicLayer\obj\Debug\LogicLayer.pdb

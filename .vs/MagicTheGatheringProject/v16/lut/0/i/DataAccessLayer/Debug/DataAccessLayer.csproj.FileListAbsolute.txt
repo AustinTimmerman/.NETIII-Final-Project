@@ -1,0 +1,4 @@
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\b\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataAccessLayer\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataAccessLayer\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataAccessLayer\Debug\DataAccessLayer.dll

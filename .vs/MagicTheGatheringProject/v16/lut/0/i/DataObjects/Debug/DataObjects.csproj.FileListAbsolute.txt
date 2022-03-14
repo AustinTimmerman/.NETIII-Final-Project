@@ -1,0 +1,5 @@
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\b\DataObjects\bin\Debug\DataObjects.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataObjects\Debug\DataObjects.csprojAssemblyReference.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataObjects\Debug\DataObjects.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataObjects\Debug\DataObjects.csproj.CopyComplete
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\DataObjects\Debug\DataObjects.dll

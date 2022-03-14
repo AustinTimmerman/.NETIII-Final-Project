@@ -1,0 +1,5 @@
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\b\LogicLayer\bin\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\LogicLayer\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\LogicLayer\Debug\LogicLayer.csproj.CopyComplete
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\LogicLayer\Debug\LogicLayer.dll
+C:\Users\austi\Documents\.NET II Final Project\MagicTheGatheringProject\.vs\MagicTheGatheringProject\v16\lut\0\i\LogicLayer\Debug\LogicLayer.csprojAssemblyReference.cache
