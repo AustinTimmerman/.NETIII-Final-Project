@@ -24,6 +24,8 @@ namespace DataObjects
         public int CardSecondaryConvertedManaCost { get; set; }
         public string CardSecondaryTypeID { get; set; }
         public string CardSecondaryRarityID { get; set; }
+        public bool IsOwned { get; set; }
+        public bool IsWishlisted { get; set; }
     }
 
     public class DeckCard : Cards

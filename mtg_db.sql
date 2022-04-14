@@ -604,6 +604,9 @@ GO
 print '' print '*** creating sp_select_all_cards ***'
 GO
 CREATE PROCEDURE [dbo].[sp_select_all_cards]
+(
+	@UserID 	[int]
+)
 AS
 	BEGIN
 		SELECT 
@@ -622,9 +625,11 @@ AS
 			[CardSecondaryColorID],	
 			[CardSecondaryConvertedManaCost],
 			[CardSecondaryTypeID],	
-			[CardSecondaryRarityID]				
+			[CardSecondaryRarityID],
+			[IsOwned],
+			[IsWishlisted]
 		FROM [dbo].[Cards]
-		JOIN [UserCards] ON [Cards].[CardID] = [UserCards].[CardID]
+		LEFT OUTER JOIN [UserCards] ON [Cards].[CardID] = [UserCards].[CardID] AND @UserID = [UserCards].[UserID]
 		
 	END
 GO

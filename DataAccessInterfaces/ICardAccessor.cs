@@ -9,6 +9,7 @@ namespace DataAccessInterfaces
 {
     public interface ICardAccessor
     {
+        List<Cards> SelectAllCards(int userID);
         List<Cards> SelectCardsByPage(int pageNum);
         List<UserCard> SelectUserCardsByUserID(int userID, int pageNum);
         int InsertUserCard(UserCard card);

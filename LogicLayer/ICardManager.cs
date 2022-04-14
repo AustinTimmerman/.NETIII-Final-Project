@@ -9,6 +9,7 @@ namespace LogicLayer
 {
     public interface ICardManager
     {
+        List<Cards> RetrieveAllCards(int userID);
         List<Cards> RetrieveCardsByPage(int pageNum = 1);
         List<UserCard> RetrieveUserCardsByUserID(int userID, int pageNum = 1);
         bool CreateUserCard(UserCard card);

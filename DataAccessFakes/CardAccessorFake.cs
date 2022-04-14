@@ -302,5 +302,10 @@ namespace DataAccessFakes
 
             return imageName;
         }
+
+        public List<Cards> SelectAllCards(int userID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
