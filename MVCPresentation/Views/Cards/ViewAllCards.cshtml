@@ -1,0 +1,67 @@
+﻿@model MVCPresentation.Models.CardViewModel
+@{
+    ViewBag.Title = "ViewAllCards";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Is Owned</th>
+                    <th scope="col">Is Wishlisted</th>
+                    <th scope="col">Card Name</th>
+                    <th scope="col">Card Color</th>
+                    <th scope="col">Mana Cost</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Rarity</th>
+                    <th scope="col">Secondary Card Name</th>
+                    <th scope="col">Secondary Color</th>
+                    <th scope="col">Secondary Mana Cost</th>
+                    <th scope="col">Secondary Type</th>
+                    <th scope="col">Secondary Card Rarity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DataObjects.Cards card in Model.Cards)
+                {
+                <tr>
+                    @if (card.IsOwned)
+                    {
+                        <td><input type="checkbox" disabled checked /></td>
+                    }
+                    else
+                    {
+                        <td><input type="checkbox" disabled /></td>
+                    }
+                    @if (card.IsWishlisted)
+                    {
+                        <td><input type="checkbox" disabled checked /></td>
+                    }
+                    else
+                    {
+                        <td><input type="checkbox" disabled /></td>
+                    }
+                    <td>@Html.ActionLink(card.CardName, "ViewCardDetails", new { cardID = card.CardID })</td>
+                    <td>@card.CardColorID</td>
+                    <td>@card.CardConvertedManaCost</td>
+                    <td>@card.CardTypeID</td>
+                    <td>@card.CardRarityID</td>
+                    <td>@card.CardSecondaryName</td>
+                    <td>@card.CardSecondaryColorID</td>
+                    @if (card.CardSecondaryConvertedManaCost != -1)
+                    {
+                        <td>@card.CardSecondaryConvertedManaCost</td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    <td>@card.CardSecondaryTypeID</td>
+                    <td>@card.CardSecondaryRarityID</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    <div class="pager">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("ViewAllCards", new { page = x }))
+    </div>

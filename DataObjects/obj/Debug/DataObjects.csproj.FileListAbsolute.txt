@@ -21,3 +21,8 @@ C:\Users\austi\Documents\.NETII-FinalProject-main\DataObjects\obj\Debug\DataObje
 C:\Users\austi\Documents\.NETII-FinalProject-main\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
 C:\Users\austi\Documents\.NETII-FinalProject-main\DataObjects\obj\Debug\DataObjects.dll
 C:\Users\austi\Documents\.NETII-FinalProject-main\DataObjects\obj\Debug\DataObjects.pdb
+C:\Users\nh229u27\Desktop\.NETIII-Final-Project\DataObjects\bin\Debug\DataObjects.dll
+C:\Users\nh229u27\Desktop\.NETIII-Final-Project\DataObjects\bin\Debug\DataObjects.pdb
+C:\Users\nh229u27\Desktop\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
+C:\Users\nh229u27\Desktop\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.dll
+C:\Users\nh229u27\Desktop\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.pdb

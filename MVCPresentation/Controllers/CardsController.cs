@@ -5,67 +5,49 @@ using System.Web;
 using System.Web.Mvc;
 using DataObjects;
 using LogicLayer;
+using MVCPresentation.Models;
 
 namespace MVCPresentation.Controllers
 {
     public class CardsController : Controller
     {
         ICardManager _cardManager = new CardManager();
-        // GET: Cards
-        public ActionResult ViewAllCards()
+        public int PageSize = 12;
+        CardViewModel _model = null;
+        
+        public ActionResult ViewAllCards(int page = 1)
         {
-            //List<UserCard> displayCards = new List<UserCard>();
             List<Cards> cards = new List<Cards>();
-
-
             cards = _cardManager.RetrieveAllCards(100000);
-            //List<Cards> cards = _cardManager.(pageNumber);
 
-            //foreach (Cards card in cards)
-            //{
-            //    for (int i = 0; i <= userCards.Count; i++)
-            //    {
-            //        if (i == userCards.Count)
-            //        {
-            //            displayCards.Add(new UserCard()
-            //            {
-            //                UserID = _user.UserID,
-            //                CardID = card.CardID,
-            //                CardName = card.CardName,
-            //                ImageID = card.ImageID,
-            //                CardDescription = card.CardDescription,
-            //                CardColorID = card.CardColorID,
-            //                CardConvertedManaCost = card.CardConvertedManaCost,
-            //                CardRarityID = card.CardRarityID,
-            //                CardTypeID = card.CardTypeID,
-            //                HasSecondaryCard = card.HasSecondaryCard,
-            //                CardSecondaryName = card.CardSecondaryName,
-            //                SecondaryImageID = card.SecondaryImageID,
-            //                CardSecondaryDescription = card.CardSecondaryDescription,
-            //                CardSecondaryColorID = card.CardSecondaryColorID,
-            //                CardSecondaryConvertedManaCost = card.CardSecondaryConvertedManaCost,
-            //                CardSecondaryRarityID = card.CardSecondaryRarityID,
-            //                CardSecondaryTypeID = card.CardSecondaryTypeID,
-            //                OwnedCard = false,
-            //                Wishlisted = false
-            //            });
-            //            break;
-            //        }
-            //        if (userCards[i].CardID == card.CardID)
-            //        {
-            //            displayCards.Add(userCards[i]);
-            //            break;
-            //        }
-            //    }
-            //}
+            _model = new CardViewModel
+            {
+                Cards = cards
+                            .OrderBy(p => p.CardName)
+                            .Skip((page - 1) * PageSize)
+                            .Take(PageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = cards.Count()
+                }
+            };
 
-            
-            return View(cards);
+
+
+
+            return View(_model);
         }
 
         // GET: Cards/Details/5
-        public ActionResult Details(int id)
+        public ActionResult ViewCardDetails(int cardID)
         {
+            if(cardID == 0)
+            {
+                return RedirectToAction("ViewAllCards");
+            }
+            
             return View();
         }
 
