@@ -4,6 +4,8 @@ namespace MVCPresentation.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using DataObjects;
+    using LogicLayer;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using MVCPresentation.Models;
@@ -52,6 +54,22 @@ namespace MVCPresentation.Migrations
                 {
                     userManager.AddToRole(user.Id, "Admin");
                     context.SaveChanges();
+
+                    var usrMgr = new UserManager();
+                    try
+                    {
+                        
+                        usrMgr.InsertNewUser(admin, admin, usrMgr.HashSha256(adminPassword), roles);
+                        // Refresh the newly-added user to get the user ID.
+                        int newUser = usrMgr.RetrieveUserIDFromEmail(admin);
+                        //usrMgr.AddUserRole(newUser, "Administrator");
+                    }
+                    catch (Exception ex)
+                    {
+                        // We want it to be brought to the user's attention that this didn't work
+                        throw;
+                    }
+
                 }
             }
 

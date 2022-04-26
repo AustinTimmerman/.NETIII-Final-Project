@@ -86,6 +86,34 @@ namespace MVCPresentation.Controllers
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
+                    LogicLayer.UserManager usrMgr = new LogicLayer.UserManager();
+                    try
+                    {
+                        if (usrMgr.AuthenticateUser(model.Email, usrMgr.HashSha256(model.Password)))
+                        {
+
+                            var oldUser = usrMgr.LoginUser(model.Email, model.Password);
+
+                            var user = this.CreateApplicationUserFromDesktop(oldUser);
+                            var result2 = await UserManager.CreateAsync(user, model.Password);
+                            if (result2.Succeeded)
+                            {
+                                //foreach (var role in usrMgr.RetrieveUserRolesByUserID(oldUser.UserID))
+                                //{
+                                    //UserManager.AddToRole(user.Id, role);
+                                //}
+                                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                                return RedirectToLocal(returnUrl);
+                            }
+                            AddErrors(result2);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
@@ -180,10 +208,14 @@ namespace MVCPresentation.Controllers
                     }
                     else
                     {
+                        LogicLayer.UserManager um = new LogicLayer.UserManager();
+                        um.InsertNewUser(model.Email, model.Email, um.HashSha256(model.Password), new System.Collections.Generic.List<string>());
+
                         var user = new ApplicationUser
                         {
                             UserName = model.Email,
-                            Email = model.Email
+                            Email = model.Email,
+                            UserID = (um.GetUserByEmail(model.Email)).UserID
                         };
                         var result = await UserManager.CreateAsync(user, model.Password);
                         if (result.Succeeded)
@@ -541,6 +573,17 @@ namespace MVCPresentation.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        private ApplicationUser CreateApplicationUserFromDesktop(User user)
+        {
+            var applicationUser = new ApplicationUser
+            {
+                Email = user.Email,
+                UserName = user.Email,
+                UserID = user.UserID
+            };
+            return applicationUser;
         }
 
         #region Helpers

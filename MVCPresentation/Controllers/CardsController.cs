@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using DataObjects;
 using LogicLayer;
 using MVCPresentation.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace MVCPresentation.Controllers
 {
@@ -15,8 +17,16 @@ namespace MVCPresentation.Controllers
         public int PageSize = 12;
         CardViewModel _model = null;
         
+
+        [Authorize]
         public ActionResult ViewAllCards(int page = 1)
         {
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int someID = (int)appUser.UserID;
+
+            
             List<Cards> cards = new List<Cards>();
             cards = _cardManager.RetrieveAllCards(100000);
 

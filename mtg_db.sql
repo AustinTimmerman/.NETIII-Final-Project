@@ -381,7 +381,7 @@ INSERT INTO [dbo].[Users]
 	
 	)
 VALUES 
-	("austimm2020", "austintimmerman20@gmail.com", "9C9064C59F1FFA2E174EE754D2979BE80DD30DB552EC03E7E327E9B1A4BD594E", 1),
+	("austimm2020", "austintimmerman20@gmail.com", "AD5ZJjSp/16enIGUvDIV+6m2Xz0Zuxcq84XWamvBVpXCPe+CWIwGzADidjiypBibVw==", 1),
 	("jimmyglas", "jim.glasgow@kirkwood.edu", "9C9064C59F1FFA2E174EE754D2979BE80DD30DB552EC03E7E327E9B1A4BD594E", 1)
 GO
 
