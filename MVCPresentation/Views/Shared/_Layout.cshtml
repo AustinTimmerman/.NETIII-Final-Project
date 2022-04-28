@@ -10,22 +10,23 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+    <div class="navbar navbar-default navbar-fixed-top nav-main" style="background-color: #5691BB;">
+        <div class="container nav-main">
+            <div class="navbar-header nav-main">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("MTG Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("MTG Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color:white;" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Cards", "ViewAllCards", "Cards")</li>
-                    <li>@Html.ActionLink("Decks", "ViewAllDecks", "Decks")</li>
-                    <li>@Html.ActionLink("Matches", "ViewAllMatches", "Matches")</li>
-                    <li>@Html.ActionLink("My Stuff", "MyStuff", "MyStuff")</li>
+            <div class="navbar-collapse collapse nav-main">
+                <ul class="nav navbar-nav nav-main">
+                    <li>@Html.ActionLink("Cards", "ViewAllCards", "Cards", new { page = 1 }, new { style = "color:white;" })</li>
+                    
+                    <li>@Html.ActionLink("Decks", "ViewAllDecks", "Decks", new { page = 1 }, new { style = "color:white;" })</li>
+                    <li>@Html.ActionLink("Matches", "ViewAllMatches", "Matches", new { page = 1 }, new { style = "color:white;" })</li>
+                    <li>@Html.ActionLink("My Stuff", "MyStuff", "MyStuff", new { page = 1 }, new { style = "color:white;" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -24,11 +24,11 @@ namespace MVCPresentation.Controllers
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
             var appUser = userManager.FindById(User.Identity.GetUserId());
-            int someID = (int)appUser.UserID;
+            int userID = (int)appUser.UserID;
 
             
             List<Cards> cards = new List<Cards>();
-            cards = _cardManager.RetrieveAllCards(100000);
+            cards = _cardManager.RetrieveAllCards(userID);
 
             _model = new CardViewModel
             {

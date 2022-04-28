@@ -44,7 +44,8 @@ namespace MVCPresentation.Migrations
                     UserName = admin,
                     Email = admin,
                     GivenName = "Admin",
-                    FamilyName = "Company"
+                    FamilyName = "Company",
+                    UserID = 1
                 };
 
                 IdentityResult result = userManager.Create(user, adminPassword);
