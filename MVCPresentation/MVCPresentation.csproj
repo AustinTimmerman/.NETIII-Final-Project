@@ -170,8 +170,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CardsController.cs" />
+    <Compile Include="Controllers\DecksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MatchesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,8 +193,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CardViewModel.cs" />
+    <Compile Include="Models\DeckViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MatchViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -257,6 +261,9 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Account\RegisterUser.cshtml" />
     <Content Include="Views\Cards\ViewAllCards.cshtml" />
+    <Content Include="Views\Decks\ViewAllDecks.cshtml" />
+    <Content Include="Views\Matches\ViewAllMatches.cshtml" />
+    <Content Include="Views\Cards\ViewCardDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,6 +34,8 @@ namespace MVCPresentation.Models
             return new ApplicationDbContext();
         }
 
+        //public System.Data.Entity.DbSet<DataObjects.Cards> Cards { get; set; }
+
         //public System.Data.Entity.DbSet<MVCPresentation.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

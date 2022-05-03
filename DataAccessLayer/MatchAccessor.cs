@@ -126,6 +126,43 @@ namespace DataAccessLayer
             return rowsAffected;
         }
 
+        public List<MatchVM> SelectAllMatches()
+        {
+            List<MatchVM> matches = new List<MatchVM>();
+            var conn = DBConnection.GetConnection();
+            string commandText = @"sp_select_all_matches";
+            var cmd = new SqlCommand(commandText, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        matches.Add(new MatchVM()
+                        {
+                            MatchID = reader.GetInt32(0),
+                            MatchName = reader.GetString(1),
+                            Username = reader.GetString(2),
+                            IsPublic = reader.GetBoolean(3)
+                        });
+                    }
+                }
+                //else
+                //{
+                //    throw new ApplicationException("There are no matches!");
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return matches;
+        }
+
         public List<MatchDeck> SelectMatchDecksByMatchID(int matchID)
         {
             List<MatchDeck> matchDecks = new List<MatchDeck>();

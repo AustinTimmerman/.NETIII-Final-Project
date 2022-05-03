@@ -381,8 +381,10 @@ INSERT INTO [dbo].[Users]
 	
 	)
 VALUES 
-	("austimm2020", "austintimmerman20@gmail.com", "AD5ZJjSp/16enIGUvDIV+6m2Xz0Zuxcq84XWamvBVpXCPe+CWIwGzADidjiypBibVw==", 1),
-	("jimmyglas", "jim.glasgow@kirkwood.edu", "9C9064C59F1FFA2E174EE754D2979BE80DD30DB552EC03E7E327E9B1A4BD594E", 1)
+	/*("austintimmerman20@gmail.com", "austintimmerman20@gmail.com", "AD5ZJjSp/16enIGUvDIV+6m2Xz0Zuxcq84XWamvBVpXCPe+CWIwGzADidjiypBibVw==", 1),*/
+	("austintimmerman20@gmail.com", "austintimmerman20@gmail.com", "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8", 1),
+	
+	("jim.glasgow@kirkwood.edu", "jim.glasgow@kirkwood.edu", "5E884898DA28047151D0E56F8DC6292773603D0D6AABBDD62A11EF721D1542D8", 1)
 GO
 
 /* Decks */
@@ -666,6 +668,57 @@ AS
 	END
 GO
 
+print '' print '*** creating sp_select_card_by_cardID ***'
+GO
+CREATE PROCEDURE [dbo].[sp_select_card_by_cardID]
+(
+	@CardID 	[int],
+	@UserID 	[int]
+)
+AS
+	BEGIN
+		SELECT 		    
+			[CardName],				
+			[ImageID],					
+			[CardDescription],	    
+			[CardColorID],		    
+			[CardConvertedManaCost],     
+			[CardTypeID],		    
+			[CardRarityID],      
+			[HasSecondaryCard],			
+			[CardSecondaryName],		
+			[SecondaryImageID],				
+			[CardSecondaryDescription],	
+			[CardSecondaryColorID],	
+			[CardSecondaryConvertedManaCost],
+			[CardSecondaryTypeID],	
+			[CardSecondaryRarityID],
+			[IsOwned],
+			[IsWishlisted]
+		FROM [dbo].[Cards]
+		LEFT OUTER JOIN [UserCards] ON [Cards].[CardID] = [UserCards].[CardID] AND @UserID = [UserCards].[UserID]
+		WHERE [Cards].[CardID] = @CardID
+		
+	END
+GO
+
+print '' print '*** creating sp_select_all_decks ***'
+GO
+CREATE PROCEDURE [dbo].[sp_select_all_decks]
+AS
+	BEGIN
+		SELECT 
+			[DeckID],
+			[DeckName], 				
+			[Email],				
+			[IsPublic]    
+		FROM [dbo].[Decks]
+		LEFT OUTER JOIN [Users] ON [Users].[UserID] = [Decks].[UserID]
+		WHERE [IsPublic] = 1
+			ORDER BY [DeckName]
+	END
+GO
+
 print '' print '*** creating sp_select_decks_by_page ***'
 GO
 CREATE PROCEDURE [dbo].[sp_select_decks_by_page]
@@ -718,6 +771,23 @@ AS
 		JOIN [Cards] ON [DeckCards].[CardID] = [Cards].[CardID]
 		WHERE @DeckID = [DeckID]
 		ORDER BY [DeckCards].[CardID]
+	END
+GO
+
+print '' print '*** creating sp_select_all_matches ***'
+GO
+CREATE PROCEDURE [dbo].[sp_select_all_matches]
+AS
+	BEGIN
+		SELECT 
+			[MatchID],
+			[MatchName],          
+			[Email],				
+			[IsPublic]
+		FROM [dbo].[Matches]
+		LEFT OUTER JOIN [Users] ON [Users].[UserID] = [Matches].[UserID]
+		WHERE [IsPublic] = 1
+			ORDER BY [MatchName]
 	END
 GO
 

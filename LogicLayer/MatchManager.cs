@@ -160,5 +160,22 @@ namespace LogicLayer
 
             return userMatches;
         }
+
+        public List<MatchVM> RetrieveAllMatches()
+        {
+            List<MatchVM> matches = new List<MatchVM>();
+
+            try
+            {
+                matches = _matchAccessor.SelectAllMatches();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return matches;
+        }
     }
 }

@@ -51,14 +51,37 @@ namespace MVCPresentation.Controllers
         }
 
         // GET: Cards/Details/5
-        public ActionResult ViewCardDetails(int cardID)
+        public ActionResult ViewCardDetails(int cardID = 0)
         {
             if(cardID == 0)
             {
                 return RedirectToAction("ViewAllCards");
             }
-            
-            return View();
+
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            Cards card = _cardManager.RetrieveCardByCardID(cardID, userID);
+            card.ImageName = _cardManager.RetrieveImageByImageID(card.ImageID);
+            card.SecondaryImageName = _cardManager.RetrieveImageByImageID(card.SecondaryImageID);
+
+            return View(card);
+        }
+        
+        public ActionResult EditCardDetails(int cardID, bool owned, bool wishlisted)
+        {
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            Cards card = _cardManager.RetrieveCardByCardID(cardID, userID);
+            card.ImageName = _cardManager.RetrieveImageByImageID(card.ImageID);
+            card.SecondaryImageName = _cardManager.RetrieveImageByImageID(card.SecondaryImageID);
+
+            return RedirectToAction("ViewCardDetails", new { cardID = card.CardID });
         }
 
         // GET: Cards/Create

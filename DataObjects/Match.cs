@@ -13,4 +13,9 @@ namespace DataObjects
         public int UserID { get; set; }
         public bool IsPublic { get; set; }
     }
+
+    public class MatchVM : Match
+    {
+        public String Username { get; set; }
+    }
 }

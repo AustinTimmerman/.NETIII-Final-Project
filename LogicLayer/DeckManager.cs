@@ -126,6 +126,23 @@ namespace LogicLayer
             return result;
         }
 
+        public List<DeckVM> RetrieveAllDecks()
+        {
+            List<DeckVM> decks = new List<DeckVM>();
+
+            try
+            {
+                decks = _deckAccessor.SelectAllDecks();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return decks;
+        }
+
         public List<DeckCard> RetrieveDeckCards(int deckID)
         {
             List<DeckCard> deckCards = new List<DeckCard>();

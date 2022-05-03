@@ -93,6 +93,22 @@ namespace LogicLayer
             return cards;
         }
 
+        public Cards RetrieveCardByCardID(int cardID, int userID)
+        {
+            Cards card = new Cards();
+            try
+            {
+                card = _cardAccessor.SelectCardByCardID(cardID, userID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return card;
+        }
+
         public List<Cards> RetrieveCardsByPage(int pageNum = 1)
         {
             List<Cards> cards = new List<Cards>();

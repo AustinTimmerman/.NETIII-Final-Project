@@ -380,5 +380,10 @@ namespace DataAccessFakes
 
             return rowsAffected;
         }
+
+        public List<DeckVM> SelectAllDecks()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

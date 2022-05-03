@@ -307,5 +307,10 @@ namespace DataAccessFakes
         {
             throw new NotImplementedException();
         }
+
+        public Cards SelectCardByCardID(int cardID, int userID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

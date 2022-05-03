@@ -14,6 +14,11 @@ namespace DataObjects
         public bool IsPublic { get; set; }
     }
 
+    public class DeckVM : Deck
+    {
+        public String Username { get; set; }
+    }
+
     public class MatchDeck
     {
         public int MatchID { get; set; }

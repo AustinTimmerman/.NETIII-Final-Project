@@ -11,6 +11,7 @@ namespace LogicLayer
     {
         List<Cards> RetrieveAllCards(int userID);
         List<Cards> RetrieveCardsByPage(int pageNum = 1);
+        Cards RetrieveCardByCardID(int cardID, int userID);
         List<UserCard> RetrieveUserCardsByUserID(int userID, int pageNum = 1);
         bool CreateUserCard(UserCard card);
         bool EditUserCard(UserCard oldCard, UserCard newCard);

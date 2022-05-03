@@ -124,6 +124,43 @@ namespace DataAccessLayer
             return rowsAffected;
         }
 
+        public List<DeckVM> SelectAllDecks()
+        {
+            List<DeckVM> decks = new List<DeckVM>();
+            var conn = DBConnection.GetConnection();
+            string commandText = @"sp_select_all_decks";
+            var cmd = new SqlCommand(commandText, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        decks.Add(new DeckVM()
+                        {
+                            DeckID = reader.GetInt32(0),
+                            DeckName = reader.GetString(1),
+                            Username = reader.GetString(2),
+                            IsPublic = reader.GetBoolean(3)
+                        });
+                    }
+                }
+                //else
+                //{
+                //    throw new ApplicationException("There are no decks!");
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return decks;
+        }
+
         public List<DeckCard> SelectDeckCards(int deckID)
         {
             List<DeckCard> deckCards = new List<DeckCard>();

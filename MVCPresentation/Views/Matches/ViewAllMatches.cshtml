@@ -1,0 +1,28 @@
+﻿@model MVCPresentation.Models.MatchViewModel
+@{
+    ViewBag.Title = "ViewAllMatches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Matches</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Match Name</th>
+            <th scope="col">Created By</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataObjects.MatchVM match in Model.Matches)
+        {
+            <tr>
+                <td>@Html.ActionLink(match.MatchName, "ViewMatchDetails", new { matchID = match.MatchID })</td>
+                <td>@match.Username</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ViewAllMatches", new { page = x }))
+</div>
