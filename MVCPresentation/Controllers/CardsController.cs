@@ -44,9 +44,6 @@ namespace MVCPresentation.Controllers
                 }
             };
 
-
-
-
             return View(_model);
         }
 
@@ -70,19 +67,83 @@ namespace MVCPresentation.Controllers
             return View(card);
         }
         
-        public ActionResult EditCardDetails(int cardID, bool owned, bool wishlisted)
+        [HttpPost]
+        public ActionResult ViewCardDetails(Cards cards)
         {
+            if(Request.Form["cancel"] != null)
+            {
+                return RedirectToAction("ViewCardDetails", new { cardID = cards.CardID });
+            }
             var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
             var appUser = userManager.FindById(User.Identity.GetUserId());
             int userID = (int)appUser.UserID;
 
-            Cards card = _cardManager.RetrieveCardByCardID(cardID, userID);
-            card.ImageName = _cardManager.RetrieveImageByImageID(card.ImageID);
-            card.SecondaryImageName = _cardManager.RetrieveImageByImageID(card.SecondaryImageID);
+            Cards _card = _cardManager.RetrieveCardByCardID(cards.CardID, userID);
 
-            return RedirectToAction("ViewCardDetails", new { cardID = card.CardID });
+            UserCard oldCard = new UserCard()
+            {
+                CardID = _card.CardID,
+                CardName = _card.CardName,
+                UserID = userID,
+                ImageID = _card.ImageID,
+                CardDescription = _card.CardDescription,
+                CardColorID = _card.CardColorID,
+                CardConvertedManaCost = _card.CardConvertedManaCost,
+                CardRarityID = _card.CardRarityID,
+                CardTypeID = _card.CardTypeID,
+                HasSecondaryCard = _card.HasSecondaryCard,
+                CardSecondaryName = _card.CardSecondaryName,
+                SecondaryImageID = _card.SecondaryImageID,
+                CardSecondaryDescription = _card.CardSecondaryDescription,
+                CardSecondaryColorID = _card.CardSecondaryColorID,
+                CardSecondaryConvertedManaCost = _card.CardSecondaryConvertedManaCost,
+                CardSecondaryRarityID = _card.CardSecondaryRarityID,
+                CardSecondaryTypeID = _card.CardSecondaryTypeID,
+                OwnedCard = _card.IsOwned,
+                Wishlisted = _card.IsWishlisted
+            };
+
+            UserCard newCard = new UserCard()
+            {
+                CardID = cards.CardID,
+                CardName = _card.CardName,
+                UserID = userID,
+                ImageID = _card.ImageID,
+                CardDescription = _card.CardDescription,
+                CardColorID = _card.CardColorID,
+                CardConvertedManaCost = _card.CardConvertedManaCost,
+                CardRarityID = _card.CardRarityID,
+                CardTypeID = _card.CardTypeID,
+                HasSecondaryCard = _card.HasSecondaryCard,
+                CardSecondaryName = _card.CardSecondaryName,
+                SecondaryImageID = _card.SecondaryImageID,
+                CardSecondaryDescription = _card.CardSecondaryDescription,
+                CardSecondaryColorID = _card.CardSecondaryColorID,
+                CardSecondaryConvertedManaCost = _card.CardSecondaryConvertedManaCost,
+                CardSecondaryRarityID = _card.CardSecondaryRarityID,
+                CardSecondaryTypeID = _card.CardSecondaryTypeID,
+                OwnedCard = cards.IsOwned,
+                Wishlisted = cards.IsWishlisted
+            };
+
+            if(!cards.IsOwned && !cards.IsWishlisted)
+            {
+                _cardManager.RemoveUserCard(newCard);
+            }
+            else
+            {
+                bool result = _cardManager.EditUserCard(oldCard, newCard);
+                if (!result)
+                {
+                    _cardManager.CreateUserCard(newCard);
+                }
+            }
+
+            return RedirectToAction("ViewCardDetails", new { cardID = cards.CardID });
         }
+
+        
 
         // GET: Cards/Create
         public ActionResult Create()

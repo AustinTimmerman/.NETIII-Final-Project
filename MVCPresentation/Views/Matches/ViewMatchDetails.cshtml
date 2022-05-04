@@ -1,0 +1,30 @@
+﻿@model MVCPresentation.Models.MatchViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@ViewBag.Title</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Deck Name</th>
+            <th scope="col">Winner</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataObjects.MatchDeck deck in Model.Decks)
+        {
+        <tr>
+            <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", "Decks", new { deckID = deck.DeckID, deckName = deck.DeckName }, null)</td>
+            @if (deck.Winner)
+            {
+                <td><input type="checkbox" disabled checked /></td>
+            }
+            else
+            {
+                <td><input type="checkbox" disabled /></td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>

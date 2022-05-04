@@ -46,14 +46,24 @@ namespace MVCPresentation.Controllers
             return View(_model);
         }
 
-        public ActionResult ViewMatchDetails(int matchID)
+        public ActionResult ViewMatchDetails(int matchID = 0, string matchName = "")
         {
             if (matchID == 0)
             {
                 return RedirectToAction("ViewAllMatches");
             }
 
-            return View();
+            List<MatchDeck> matchDecks = _matchManager.RetrieveMatchDecksByMatchID(matchID);
+
+            _model = new MatchViewModel
+            {
+                Decks = matchDecks
+                            .OrderBy(p => p.DeckName)
+            };
+
+            ViewBag.Title = matchName;
+
+            return View(_model);
         }
     }
 }

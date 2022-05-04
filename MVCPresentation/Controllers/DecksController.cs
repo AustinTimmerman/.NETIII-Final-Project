@@ -50,14 +50,24 @@ namespace MVCPresentation.Controllers
             return View(_model);
         }
 
-        public ActionResult ViewDeckDetails(int deckID)
+        public ActionResult ViewDeckDetails(int deckID = 0, string deckName = "")
         {
             if (deckID == 0)
             {
                 return RedirectToAction("ViewAllDecks");
             }
 
-            return View();
+            List<DeckCard> deckCards = new List<DeckCard>();
+            deckCards = _deckManager.RetrieveDeckCards(deckID);
+
+            _model = new DeckViewModel
+            {
+                Cards = deckCards
+                            .OrderBy(p => p.CardName)
+            };
+
+            ViewBag.Title = deckName;
+            return View(_model);
         }
     }
 }

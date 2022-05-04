@@ -16,7 +16,7 @@
         @foreach (DataObjects.DeckVM deck in Model.Decks)
         {
             <tr>
-                <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", new { deckID = deck.DeckID })</td>
+                <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", new { deckID = deck.DeckID, deckName = deck.DeckName})</td>
                 <td>@deck.Username</td>
             </tr>
         }

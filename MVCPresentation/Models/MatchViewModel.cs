@@ -9,5 +9,6 @@ namespace MVCPresentation.Models
     {
         public IEnumerable<MatchVM> Matches { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public IEnumerable<MatchDeck> Decks { get; set; }
     }
 }

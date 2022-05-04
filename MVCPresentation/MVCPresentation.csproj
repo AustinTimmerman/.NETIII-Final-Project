@@ -264,6 +264,8 @@
     <Content Include="Views\Decks\ViewAllDecks.cshtml" />
     <Content Include="Views\Matches\ViewAllMatches.cshtml" />
     <Content Include="Views\Cards\ViewCardDetails.cshtml" />
+    <Content Include="Views\Decks\ViewDeckDetails.cshtml" />
+    <Content Include="Views\Matches\ViewMatchDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

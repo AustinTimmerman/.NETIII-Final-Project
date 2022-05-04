@@ -16,7 +16,7 @@
         @foreach (DataObjects.MatchVM match in Model.Matches)
         {
             <tr>
-                <td>@Html.ActionLink(match.MatchName, "ViewMatchDetails", new { matchID = match.MatchID })</td>
+                <td>@Html.ActionLink(match.MatchName, "ViewMatchDetails", new { matchID = match.MatchID, matchName = match.MatchName })</td>
                 <td>@match.Username</td>
             </tr>
         }
