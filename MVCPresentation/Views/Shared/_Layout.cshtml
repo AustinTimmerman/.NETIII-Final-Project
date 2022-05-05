@@ -22,10 +22,22 @@
             <div class="navbar-collapse collapse nav-main" style="background-color: #5691BB;">
                 <ul class="nav navbar-nav nav-main" style="background-color: #5691BB;">
                     <li>@Html.ActionLink("Cards", "ViewAllCards", "Cards", new { page = 1 }, new { style = "color:white;" })</li>
-                    
+
                     <li>@Html.ActionLink("Decks", "ViewAllDecks", "Decks", new { page = 1 }, new { style = "color:white;" })</li>
                     <li>@Html.ActionLink("Matches", "ViewAllMatches", "Matches", new { page = 1 }, new { style = "color:white;" })</li>
-                    <li>@Html.ActionLink("My Stuff", "MyStuff", "MyStuff", new { page = 1 }, new { style = "color:white;" })</li>
+                    <li class="dropdown" style="margin-top: 14px;">
+                        <button class="dropdown-toggle" style="color: white; background-color: #5691BB; border: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            My Stuff
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #5691BB;">
+                            @Html.ActionLink("My Cards", "ViewMyCards", "MyStuff", new { page = 1 }, new { style = "color:white; margin-left: 5px;" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("My Decks", "ViewMyDecks", "MyStuff", new { page = 1 }, new { style = "color:white; margin-left: 5px;" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("My Matches", "ViewMyMatches", "MyStuff", new { page = 1 }, new { style = "color:white; margin-left: 5px;" })
+                        </div>
+                    </li>
+                    @*<li>@Html.ActionLink("My Stuff", "MyStuff", "MyStuff", new { page = 1 }, new { style = "color:white;" })</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
