@@ -1,0 +1,38 @@
+﻿@model MVCPresentation.Models.MatchViewModel
+@{
+    ViewBag.Title = "ViewAllMatches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Your Matches</h1>
+
+@Html.ActionLink("Create Match", "CreateMatch", "MyStuff", null, new { @class = "btn btn-primary", style = "float:right;" })
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Match Name</th>
+            <th scope="col">Is Public</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataObjects.MatchVM match in Model.Matches)
+        {
+            <tr>
+                <td>@Html.ActionLink(match.MatchName, "ViewMatchDetails", "Matches", new { matchID = match.MatchID, matchName = match.MatchName }, null)</td>
+                @if (match.IsPublic)
+                {
+                    <td><input type="checkbox" disabled checked /></td>
+                }
+                else
+                {
+                    <td><input type="checkbox" disabled /></td>
+                }
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ViewMyMatches", new { page = x }))
+</div>

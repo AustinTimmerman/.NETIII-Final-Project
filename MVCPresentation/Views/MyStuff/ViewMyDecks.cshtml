@@ -1,0 +1,43 @@
+﻿@model MVCPresentation.Models.DeckViewModel
+@{
+    ViewBag.Title = "ViewAllDecks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Your Decks</h1>
+
+@Html.ActionLink("Create Deck", "CreateDeck", "MyStuff", null, new { @class = "btn btn-primary", style = "float:right;" })
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Deck Name</th>
+            <th scope="col">Is Public</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataObjects.DeckVM deck in Model.Decks)
+        {
+            <tr>
+                <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", "Decks", new { deckID = deck.DeckID, deckName = deck.DeckName }, null)</td>
+                @if (deck.IsPublic)
+                {
+                    <td><input type="checkbox" disabled checked /></td>
+                }
+                else
+                {
+                    <td><input type="checkbox" disabled /></td>
+                }
+                @*<td><button class="btn-danger", new { onclick = "return confirm('Do you really want to delete this product?')" })>Remove</button></td>*@
+            <td>
+                @Html.ActionLink("Edit", "EditDeck", "MyStuff", new { deckID = deck.DeckID }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "DeleteDeck", "MyStuff", new { confirm = true, deckID = deck.DeckID, deckName = deck.DeckName }, new { onclick = "return confirm('Do you really want to delete this deck?')", @class = "btn btn-danger" })
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ViewMyDecks", new { page = x }))
+</div>
