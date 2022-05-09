@@ -31,3 +31,4 @@ C:\Users\austi\Documents\.NETIII-Final-Project\DataObjects\bin\Debug\DataObjects
 C:\Users\austi\Documents\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.csproj.CoreCompileInputs.cache
 C:\Users\austi\Documents\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.dll
 C:\Users\austi\Documents\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.pdb
+C:\Users\austi\Documents\.NETIII-Final-Project\DataObjects\obj\Debug\DataObjects.csproj.AssemblyReference.cache

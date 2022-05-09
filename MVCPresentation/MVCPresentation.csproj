@@ -270,6 +270,13 @@
     <Content Include="Views\MyStuff\ViewMyCards.cshtml" />
     <Content Include="Views\MyStuff\ViewMyDecks.cshtml" />
     <Content Include="Views\MyStuff\ViewMyMatches.cshtml" />
+    <Content Include="Views\MyStuff\EditMyDeck.cshtml" />
+    <Content Include="Views\MyStuff\CreateDeck.cshtml" />
+    <Content Include="Views\MyStuff\EditMyMatch.cshtml" />
+    <Content Include="Views\MyStuff\CreateMatch.cshtml" />
+    <Content Include="Views\Cards\AddCardToDeck.cshtml" />
+    <Content Include="Views\MyStuff\EditCard.cshtml" />
+    <Content Include="Views\MyStuff\ViewMyDeckDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

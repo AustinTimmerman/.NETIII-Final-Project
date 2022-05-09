@@ -10,141 +10,141 @@
 </p>*@
 @using (Html.BeginForm("ViewCardDetails", "Cards", FormMethod.Post))
 {
-    <div class="text-center">
-        <div class="justify-content-between">
-            <h2>@Html.DisplayFor(model => model.CardName)</h2>
-            <button class="btn-primary">Add to Deck</button>
-        </div>
-        <hr />
-        <dl>
-
-            <dt>
-                @Html.HiddenFor(model => model.CardID)
-            </dt>
-
-            <dd>
-                <img src="~/Content/Images/@Model.ImageName" />
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardDescription)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CardDescription)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardColorID)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CardColorID)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardConvertedManaCost)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CardConvertedManaCost)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardTypeID)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CardTypeID)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.CardRarityID)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.CardRarityID)
-            </dd>
-
-        </dl>
-        @if (Model.HasSecondaryCard)
-        {
-            <h2>@Model.CardSecondaryName</h2>
-            <dl>
-
-
-                <dd>
-                    <img src="~/Content/Images/@Model.SecondaryImageName" />
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CardSecondaryDescription)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CardSecondaryDescription)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CardSecondaryColorID)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CardSecondaryColorID)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CardSecondaryConvertedManaCost)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CardSecondaryConvertedManaCost)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CardSecondaryTypeID)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CardSecondaryTypeID)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.CardSecondaryRarityID)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.CardSecondaryRarityID)
-                </dd>
-
-            </dl>
-        }
-
-        <dl>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.IsOwned)
-            </dt>
-
-            <dd>
-                @*<input type="checkbox" id="isOwned" name="IsOwned" class="chkclass" value="@Model.IsOwned" />*@
-                @Html.CheckBoxFor(model => model.IsOwned)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.IsWishlisted)
-            </dt>
-
-            <dd>
-                @Html.CheckBoxFor(model => model.IsWishlisted)
-                @*<input type="checkbox" id="isWishlisted" name="IsWishlisted" class="chkclass" value="@Model.IsWishlisted" />*@
-            </dd>
-        </dl>
-        <br />
-        @*onclick="location.href='@Url.Action("EditCardDetails", "Cards", new { cardID = Model.CardID, owned = Model.IsOwned, wishlisted = Model.IsWishlisted })'"*@
-        <input type="submit" value="Save" class="btn-primary" name="save" id="save"/>
-        <input type="submit" value="Cancel" class="btn-danger" name="cancel" id="cancel"/>
+<div class="text-center">
+    <div class="justify-content-between">
+        <h2>@Html.DisplayFor(model => model.CardName)</h2>
     </div>
+    @Html.ActionLink("Add to Deck", "AddCardToDeck", "Cards", new { cardID = Model.CardID }, new { @class = "btn btn-primary", style = "" })
+    <hr />
+    <dl>
+
+        <dt>
+            @Html.HiddenFor(model => model.CardID)
+        </dt>
+
+        <dd>
+            <img src="~/Content/Images/@Model.ImageName" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardColorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardColorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardConvertedManaCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardConvertedManaCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardTypeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardTypeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardRarityID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardRarityID)
+        </dd>
+
+    </dl>
+    @if (Model.HasSecondaryCard)
+    {
+        <h2>@Model.CardSecondaryName</h2>
+        <dl>
+
+
+            <dd>
+                <img src="~/Content/Images/@Model.SecondaryImageName" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardSecondaryDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardSecondaryDescription)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardSecondaryColorID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardSecondaryColorID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardSecondaryConvertedManaCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardSecondaryConvertedManaCost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardSecondaryTypeID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardSecondaryTypeID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CardSecondaryRarityID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CardSecondaryRarityID)
+            </dd>
+
+        </dl>
+    }
+
+    <dl>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsOwned)
+        </dt>
+
+        <dd>
+            @*<input type="checkbox" id="isOwned" name="IsOwned" class="chkclass" value="@Model.IsOwned" />*@
+            @Html.CheckBoxFor(model => model.IsOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsWishlisted)
+        </dt>
+
+        <dd>
+            @Html.CheckBoxFor(model => model.IsWishlisted)
+            @*<input type="checkbox" id="isWishlisted" name="IsWishlisted" class="chkclass" value="@Model.IsWishlisted" />*@
+        </dd>
+    </dl>
+    <br />
+    @*onclick="location.href='@Url.Action("EditCardDetails", "Cards", new { cardID = Model.CardID, owned = Model.IsOwned, wishlisted = Model.IsWishlisted })'"*@
+    <input type="submit" value="Save" class="btn-primary" name="save" id="save" />
+    <input type="submit" value="Cancel" class="btn-danger" name="cancel" id="cancel" />
+</div>
 }
 
 

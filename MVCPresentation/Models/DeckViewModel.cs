@@ -11,5 +11,6 @@ namespace MVCPresentation.Models
         public IEnumerable<DeckVM> Decks { get; set; }
         public PagingInfo PagingInfo { get; set; }
         public IEnumerable<DeckCard> Cards { get; set; }
+        public bool CanEdit { get; set; }
     }
 }

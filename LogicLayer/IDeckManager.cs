@@ -11,6 +11,7 @@ namespace LogicLayer
     {
         List<DeckVM> RetrieveAllDecks();
         List<Deck> RetrieveDecksByPage(int pageNum = 1);
+        Deck RetrieveDeckByDeckID(int deckID);
         List<DeckCard> RetrieveDeckCards(int deckID);
         List<Deck> RetrieveUserDecksByUserID(int userID, int pageNum = 1);
         bool CreateDeck(string deckName, int userID, bool isPublic);

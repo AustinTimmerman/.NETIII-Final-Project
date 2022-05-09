@@ -14,6 +14,7 @@ namespace MVCPresentation.Controllers
     public class CardsController : Controller
     {
         ICardManager _cardManager = new CardManager();
+        IDeckManager _deckManager = new DeckManager();
         public int PageSize = 12;
         CardViewModel _model = null;
         
@@ -47,6 +48,7 @@ namespace MVCPresentation.Controllers
             return View(_model);
         }
 
+        [Authorize]
         // GET: Cards/Details/5
         public ActionResult ViewCardDetails(int cardID = 0)
         {
@@ -67,6 +69,7 @@ namespace MVCPresentation.Controllers
             return View(card);
         }
         
+
         [HttpPost]
         public ActionResult ViewCardDetails(Cards cards)
         {
@@ -143,72 +146,64 @@ namespace MVCPresentation.Controllers
             return RedirectToAction("ViewCardDetails", new { cardID = cards.CardID });
         }
 
-        
-
-        // GET: Cards/Create
-        public ActionResult Create()
+        [Authorize]
+        [HttpGet]
+        public ActionResult AddCardToDeck(int cardID = 0)
         {
-            return View();
-        }
-
-        // POST: Cards/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
+            if(cardID == 0)
             {
-                // TODO: Add insert logic here
-
                 return RedirectToAction("ViewAllCards");
             }
-            catch
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            Cards card = _cardManager.RetrieveCardByCardID(cardID, userID);
+
+            _model = new CardViewModel
             {
-                return View();
-            }
+                Card = card,
+                Decks = _deckManager.RetrieveUserDecksByUserID(userID)
+            };
+            return View(_model);
         }
 
-        // GET: Cards/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Cards/Edit/5
+        [Authorize]
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult AddCardToDeck(FormCollection collection)
         {
+            int cardID = int.Parse(collection["Card.CardID"]);
+            int deckID = int.Parse(collection["SelectedDeck"]);
+            int amount = int.Parse(collection["Amount"]);
+
+            if (Request.Form["cancel"] != null)
+            {
+                return RedirectToAction("ViewCardDetails", new { cardID = cardID });
+            }
+
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            DeckCard card = new DeckCard()
+            {
+                DeckID = deckID,
+                CardID = cardID,
+                CardCount = amount
+            };
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("ViewAllCards");
+                _deckManager.CreateDeckCard(card);
+                TempData["Message"] = "Successfully added to deck.";
             }
-            catch
+            catch(Exception)
             {
-                return View();
+                TempData["Message"] = "Card is already in this deck.";
+                return RedirectToAction("AddCardToDeck", new { cardID = cardID });
             }
-        }
-
-        // GET: Cards/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Cards/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("ViewAllCards");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("AddCardToDeck", new { cardID = cardID });
         }
     }
 }

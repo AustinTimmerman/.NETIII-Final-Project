@@ -166,6 +166,11 @@ namespace DataAccessFakes
             throw new NotImplementedException();
         }
 
+        public Match SelectMatchByMatchID(int matchID)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<MatchDeck> SelectMatchDecksByMatchID(int matchID)
         {
             List<MatchDeck> matchDecks = new List<MatchDeck>();

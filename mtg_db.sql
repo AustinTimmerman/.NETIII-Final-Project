@@ -740,6 +740,23 @@ AS
 	END
 GO
 
+print '' print '*** creating sp_select_deck_by_deckID ***'
+GO
+CREATE PROCEDURE [dbo].[sp_select_deck_by_deckID]
+(
+	@DeckID		int
+)
+AS
+	BEGIN
+		SELECT 
+			[DeckName], 				
+			[UserID],				
+			[IsPublic]    
+		FROM [dbo].[Decks]
+		WHERE @DeckID = [DeckID]
+	END
+GO
+
 print '' print '*** creating sp_select_deck_cards_by_deckID ***'
 GO
 CREATE PROCEDURE [dbo].[sp_select_deck_cards_by_deckID]
@@ -809,6 +826,23 @@ AS
 			ORDER BY [MatchName]
 			OFFSET (@PageNumber-1)*20 ROWS
 			FETCH NEXT 20 ROWS ONLY
+	END
+GO
+
+print '' print '*** creating sp_select_match_by_matchID ***'
+GO
+CREATE PROCEDURE [dbo].[sp_select_match_by_matchID]
+(
+	@MatchID		int
+)
+AS
+	BEGIN
+		SELECT 
+			[MatchName],          
+			[UserID],				
+			[IsPublic]
+		FROM [dbo].[Matches]
+		WHERE @MatchID = [MatchID]
 	END
 GO
 

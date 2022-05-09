@@ -161,6 +161,45 @@ namespace DataAccessLayer
             return decks;
         }
 
+        public Deck SelectDeckByDeckID(int deckID)
+        {
+            Deck deck = new Deck();
+            var conn = DBConnection.GetConnection();
+            string commandText = @"sp_select_deck_by_deckID";
+            var cmd = new SqlCommand(commandText, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@DeckID", SqlDbType.Int);
+            cmd.Parameters["@DeckID"].Value = deckID;
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        deck = new Deck()
+                        {
+                            DeckID = deckID,
+                            DeckName = reader.GetString(0),
+                            UserID = reader.GetInt32(1),
+                            IsPublic = reader.GetBoolean(2)
+                        };
+                    }
+                }
+                //else
+                //{
+                //    throw new ApplicationException("There are no decks!");
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return deck;
+        }
+
         public List<DeckCard> SelectDeckCards(int deckID)
         {
             List<DeckCard> deckCards = new List<DeckCard>();

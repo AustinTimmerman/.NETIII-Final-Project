@@ -57,6 +57,11 @@ namespace MVCPresentation.Controllers
                 return RedirectToAction("ViewAllDecks");
             }
 
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
             List<DeckCard> deckCards = new List<DeckCard>();
             deckCards = _deckManager.RetrieveDeckCards(deckID);
 
@@ -65,6 +70,14 @@ namespace MVCPresentation.Controllers
                 Cards = deckCards
                             .OrderBy(p => p.CardName)
             };
+            if (_deckManager.RetrieveDeckByDeckID(deckID).UserID == userID)
+            {
+                _model.CanEdit = true;
+            }
+            else
+            {
+                _model.CanEdit = false;
+            }
 
             ViewBag.Title = deckName;
             return View(_model);

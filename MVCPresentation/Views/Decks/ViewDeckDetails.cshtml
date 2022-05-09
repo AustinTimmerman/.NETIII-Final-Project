@@ -32,42 +32,43 @@ else
     <tbody>
         @foreach (DataObjects.DeckCard card in Model.Cards)
         {
-            <tr>
-                @if (card.IsOwned)
-                {
-                    <td><input type="checkbox" disabled checked /></td>
-                }
-                else
-                {
-                    <td><input type="checkbox" disabled /></td>
-                }
-                @if (card.IsWishlisted)
-                {
-                    <td><input type="checkbox" disabled checked /></td>
-                }
-                else
-                {
-                    <td><input type="checkbox" disabled /></td>
-                }
-                <td>@card.CardCount</td>
-                <td>@Html.ActionLink(card.CardName, "ViewCardDetails", "Cards", new { cardID = card.CardID }, null)</td>
-                <td class="visible-md visible-lg">@card.CardColorID</td>
-                <td class="visible-md visible-lg">@card.CardConvertedManaCost</td>
-                <td class="visible-md visible-lg">@card.CardTypeID</td>
-                <td class="visible-md visible-lg">@card.CardRarityID</td>
-                <td class="visible-lg">@card.CardSecondaryName</td>
-                <td class="visible-lg">@card.CardSecondaryColorID</td>
-                @if (card.CardSecondaryConvertedManaCost != -1)
-                {
-                    <td class="visible-lg">@card.CardSecondaryConvertedManaCost</td>
-                }
-                else
-                {
-                    <td class="visible-lg"></td>
-                }
-                <td class="visible-lg">@card.CardSecondaryTypeID</td>
-                <td class="visible-lg">@card.CardSecondaryRarityID</td>
-            </tr>
+        <tr>
+            @if (card.IsOwned)
+            {
+                <td><input type="checkbox" disabled checked /></td>
+            }
+            else
+            {
+                <td><input type="checkbox" disabled /></td>
+            }
+            @if (card.IsWishlisted)
+            {
+                <td><input type="checkbox" disabled checked /></td>
+            }
+            else
+            {
+                <td><input type="checkbox" disabled /></td>
+            }
+            <td>@card.CardCount</td>
+            <td>@Html.ActionLink(card.CardName, "ViewCardDetails", "Cards", new { cardID = card.CardID }, null)</td>
+            <td class="visible-md visible-lg">@card.CardColorID</td>
+            <td class="visible-md visible-lg">@card.CardConvertedManaCost</td>
+            <td class="visible-md visible-lg">@card.CardTypeID</td>
+            <td class="visible-md visible-lg">@card.CardRarityID</td>
+            <td class="visible-lg">@card.CardSecondaryName</td>
+            <td class="visible-lg">@card.CardSecondaryColorID</td>
+            @if (card.CardSecondaryConvertedManaCost != -1)
+            {
+                <td class="visible-lg">@card.CardSecondaryConvertedManaCost</td>
+            }
+            else
+            {
+                <td class="visible-lg"></td>
+            }
+            <td class="visible-lg">@card.CardSecondaryTypeID</td>
+            <td class="visible-lg">@card.CardSecondaryRarityID</td>
+            
+        </tr>
         }
     </tbody>
 </table>

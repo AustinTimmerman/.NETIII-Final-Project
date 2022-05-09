@@ -9,6 +9,10 @@
 @Html.ActionLink("Create Deck", "CreateDeck", "MyStuff", null, new { @class = "btn btn-primary", style = "float:right;" })
 
 <table class="table">
+    @if (TempData["Message"] != null)
+    {
+        <caption>@TempData["Message"]</caption>
+    }
     <thead>
         <tr>
             <th scope="col">Deck Name</th>
@@ -19,7 +23,7 @@
         @foreach (DataObjects.DeckVM deck in Model.Decks)
         {
             <tr>
-                <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", "Decks", new { deckID = deck.DeckID, deckName = deck.DeckName }, null)</td>
+                <td>@Html.ActionLink(deck.DeckName, "ViewMyDeckDetails", "MyStuff", new { deckID = deck.DeckID, deckName = deck.DeckName }, null)</td>
                 @if (deck.IsPublic)
                 {
                     <td><input type="checkbox" disabled checked /></td>
@@ -29,10 +33,10 @@
                     <td><input type="checkbox" disabled /></td>
                 }
                 @*<td><button class="btn-danger", new { onclick = "return confirm('Do you really want to delete this product?')" })>Remove</button></td>*@
-            <td>
-                @Html.ActionLink("Edit", "EditDeck", "MyStuff", new { deckID = deck.DeckID }, new { @class = "btn btn-info" })
-                @Html.ActionLink("Delete", "DeleteDeck", "MyStuff", new { confirm = true, deckID = deck.DeckID, deckName = deck.DeckName }, new { onclick = "return confirm('Do you really want to delete this deck?')", @class = "btn btn-danger" })
-            </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditMyDeck", "MyStuff", new { deckID = deck.DeckID }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "DeleteDeck", "MyStuff", new { confirm = true, deckID = deck.DeckID, deckName = deck.DeckName }, new { onclick = "return confirm('Do you really want to delete this deck?')", @class = "btn btn-danger" })
+                </td>
             </tr>
         }
     </tbody>

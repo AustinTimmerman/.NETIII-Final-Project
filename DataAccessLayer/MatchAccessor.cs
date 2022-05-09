@@ -163,6 +163,46 @@ namespace DataAccessLayer
             return matches;
         }
 
+        public Match SelectMatchByMatchID(int matchID)
+        {
+            Match match = new Match();
+            var conn = DBConnection.GetConnection();
+            string commandText = @"sp_select_match_by_matchID";
+            var cmd = new SqlCommand(commandText, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@MatchID", SqlDbType.Int);
+            cmd.Parameters["@MatchID"].Value = matchID;
+
+            try
+            {
+                conn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        match = new Match()
+                        {
+                            MatchID = matchID,
+                            MatchName = reader.GetString(0),
+                            UserID = reader.GetInt32(1),
+                            IsPublic = reader.GetBoolean(2)
+                        };
+                    }
+                }
+                //else
+                //{
+                //    throw new ApplicationException("There are no matches!");
+                //}
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return match;
+        }
+
         public List<MatchDeck> SelectMatchDecksByMatchID(int matchID)
         {
             List<MatchDeck> matchDecks = new List<MatchDeck>();

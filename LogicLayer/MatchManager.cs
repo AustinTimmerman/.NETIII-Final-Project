@@ -177,5 +177,22 @@ namespace LogicLayer
 
             return matches;
         }
+
+        public Match RetrieveMatchByMatchID(int matchID)
+        {
+            Match match = new Match();
+
+            try
+            {
+                match = _matchAccessor.SelectMatchByMatchID(matchID);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return match;
+        }
     }
 }

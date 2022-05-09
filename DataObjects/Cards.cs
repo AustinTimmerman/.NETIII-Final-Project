@@ -46,6 +46,8 @@ namespace DataObjects
     public class DeckCard : Cards
     {
         public int DeckID { get; set; }
+        [Required(ErrorMessage = "Please enter the card count")]
+        [Range(1, 100, ErrorMessage = "Please enter a value between 1 and 100.")]
         public int CardCount { get; set; }
     }
 

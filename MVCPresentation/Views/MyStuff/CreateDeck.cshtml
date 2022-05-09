@@ -1,0 +1,44 @@
+﻿@model DataObjects.Deck
+@{
+    ViewBag.Title = "ViewAllDecks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CreateDeck", "MyStuff", FormMethod.Post))
+{
+<div class="text-center">
+    <div class="justify-content-between">
+        <h2>Create New Deck</h2>
+    </div>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.DeckName)
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model => model.DeckName)
+
+        </dd>
+        @Html.ValidationMessageFor(model => model.DeckName)
+
+        <dt>
+            <br />
+            @Html.DisplayNameFor(model => model.IsPublic)
+        </dt>
+
+        <dd>
+            @*<input type="checkbox" id="isOwned" name="IsOwned" class="chkclass" value="@Model.IsOwned" />*@
+            @Html.CheckBoxFor(model => model.IsPublic)
+        </dd>
+    </dl>
+    <br />
+    @*onclick="location.href='@Url.Action("EditCardDetails", "Cards", new { cardID = Model.CardID, owned = Model.IsOwned, wishlisted = Model.IsWishlisted })'"*@
+    <input type="submit" value="Save" class="btn-primary" name="save" id="save" />
+    <input type="submit" value="Cancel" class="btn-danger" name="cancel" id="cancel" formnovalidate="formnovalidate"/>
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

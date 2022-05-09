@@ -8,6 +8,10 @@
 @Html.ActionLink("Create Match", "CreateMatch", "MyStuff", null, new { @class = "btn btn-primary", style = "float:right;" })
 
 <table class="table">
+    @if (TempData["Message"] != null)
+    {
+        <caption>@TempData["Message"]</caption>
+    }
     <thead>
         <tr>
             <th scope="col">Match Name</th>
@@ -27,6 +31,10 @@
                 {
                     <td><input type="checkbox" disabled /></td>
                 }
+                <td>
+                    @Html.ActionLink("Edit", "EditMyMatch", "MyStuff", new { matchID = match.MatchID }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "DeleteMatch", "MyStuff", new { confirm = true, matchID = match.MatchID, matchName = match.MatchName }, new { onclick = "return confirm('Do you really want to delete this match?')", @class = "btn btn-danger" })
+                </td>
 
             </tr>
         }
