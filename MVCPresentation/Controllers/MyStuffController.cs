@@ -155,6 +155,7 @@ namespace MVCPresentation.Controllers
             return View(_matchModel);
         }
 
+        [Authorize]
         public ActionResult ViewMyDeckDetails(int deckID = 0, string deckName = "")
         {
             if (deckID == 0)
@@ -173,12 +174,34 @@ namespace MVCPresentation.Controllers
             _deckModel = new DeckViewModel
             {
                 Cards = deckCards
-                            .OrderBy(p => p.CardName)
+                            .OrderBy(p => p.CardName),
+                Deck = _deckManager.RetrieveDeckByDeckID(deckID)
             };
             
 
             ViewBag.Title = deckName;
             return View(_deckModel);
+        }
+
+        [Authorize]
+        public ActionResult ViewMyMatchDetails(int matchID = 0, string matchName = "")
+        {
+            if (matchID == 0)
+            {
+                return RedirectToAction("ViewMyMatches");
+            }
+
+            List<MatchDeck> matchDecks = _matchManager.RetrieveMatchDecksByMatchID(matchID);
+
+            _matchModel = new MatchViewModel
+            {
+                Decks = matchDecks
+                            .OrderBy(p => p.DeckName)
+            };
+
+            ViewBag.Title = matchName;
+
+            return View(_matchModel);
         }
 
         [Authorize]
@@ -333,6 +356,94 @@ namespace MVCPresentation.Controllers
 
         [Authorize]
         [HttpGet]
+        public ActionResult AddDeckToMatch(int deckID = 0)
+        {
+            if (deckID == 0)
+            {
+                return RedirectToAction("ViewMyDecks");
+            }
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            Deck deck = _deckManager.RetrieveDeckByDeckID(deckID);
+
+            _deckModel = new DeckViewModel
+            {
+                Deck = deck,
+                Matches = _matchManager.RetrieveUserMatchesByUserID(userID)
+            };
+            return View(_deckModel);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AddDeckToMatch(FormCollection collection)
+        {
+            int deckID = int.Parse(collection["Deck.DeckID"]);
+            int matchID = int.Parse(collection["SelectedMatch"]);
+            string w = (collection["Winner"]);
+            bool winner;
+            if (w.Contains("true"))
+            {
+                winner = true;
+            }
+            else
+            {
+                winner = false;
+            }
+
+            if (Request.Form["cancel"] != null)
+            {
+                string deckName = _deckManager.RetrieveDeckByDeckID(deckID).DeckName;
+                return RedirectToAction("ViewMyDeckDetails", new { deckID = deckID, deckName = deckName });
+            }
+
+            var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            var appUser = userManager.FindById(User.Identity.GetUserId());
+            int userID = (int)appUser.UserID;
+
+            MatchDeck deck = new MatchDeck()
+            {
+                MatchID = matchID,
+                DeckID = deckID,
+                Winner = winner
+            };
+            try
+            {
+                _matchManager.CreateMatchDeck(deck);
+                TempData["Message"] = "Successfully added to match.";
+            }
+            catch (Exception)
+            {
+                TempData["Message"] = "Deck is already in this match.";
+                return RedirectToAction("AddDeckToMatch", new { deckID = deckID });
+            }
+            return RedirectToAction("AddDeckToMatch", new { deckID = deckID });
+            //DeckCard card = new DeckCard()
+            //{
+            //    DeckID = deckID,
+            //    CardID = cardID,
+            //    CardCount = amount
+            //};
+            //try
+            //{
+            //    _deckManager.CreateDeckCard(card);
+            //    TempData["Message"] = "Successfully added to deck.";
+            //}
+            //catch (Exception)
+            //{
+            //    TempData["Message"] = "Card is already in this deck.";
+            //    return RedirectToAction("AddCardToDeck", new { cardID = cardID });
+            //}
+            //return RedirectToAction("AddCardToDeck", new { cardID = cardID });
+
+        }
+
+        [Authorize]
+        [HttpGet]
         public ActionResult CreateMatch()
         {
             Match match = new Match();
@@ -416,6 +527,25 @@ namespace MVCPresentation.Controllers
                 TempData["Message"] = "Could not delete match. Please try again.";
             }
             return RedirectToAction("ViewMyMatches");
+        }
+
+        [Authorize]
+        public ActionResult DeleteMatchDeck(int deckID = 0, int matchID = 0, bool winner = false)
+        {
+            MatchDeck matchDeck = new MatchDeck();
+            matchDeck.DeckID = deckID;
+            matchDeck.MatchID = matchID;
+            matchDeck.Winner = winner;
+            string matchName = _matchManager.RetrieveMatchByMatchID(matchID).MatchName;
+            if (_matchManager.RemoveMatchDeck(matchDeck))
+            {
+                TempData["Message"] = "Deck successfully removed.";
+            }
+            else
+            {
+                TempData["Message"] = "Could not remove deck. Please try again.";
+            }
+            return RedirectToAction("ViewMyMatchDetails", new { matchID = matchID, matchName = matchName });
         }
     }
 }

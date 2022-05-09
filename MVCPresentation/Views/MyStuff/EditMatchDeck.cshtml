@@ -1,0 +1,49 @@
+﻿@model DataObjects.MatchDeck
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("EditMatchDeck", "MyStuff", FormMethod.Post))
+{
+    <div class="text-center">
+        <div class="justify-content-between">
+            <h2>Edit Winner</h2>
+        </div>
+        <hr />
+        @if (TempData["Message"] != null)
+        {
+            <caption>@TempData["Message"]</caption>
+        }
+        <dl>
+
+            <dt>
+                Deck
+            </dt>
+            @Html.HiddenFor(model => model.DeckID)
+            @Html.HiddenFor(model => model.MatchID)
+            <dd>
+                @Html.DisplayFor(model => model.DeckName)
+
+            </dd>
+
+
+            <dt>
+                <br />
+                Winner
+            </dt>
+
+            <dd>
+                @*<input type="checkbox" id="isOwned" name="IsOwned" class="chkclass" value="@Model.IsOwned" />*@
+                @Html.CheckBoxFor(model => model.Winner)
+            </dd>
+        </dl>
+        <br />
+        @*onclick="location.href='@Url.Action("EditCardDetails", "Cards", new { cardID = Model.CardID, owned = Model.IsOwned, wishlisted = Model.IsWishlisted })'"*@
+        <input type="submit" value="Save" class="btn-primary" name="save" id="save" />
+        <input type="submit" value="Cancel" class="btn-danger" name="cancel" id="cancel" formnovalidate="formnovalidate" />
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

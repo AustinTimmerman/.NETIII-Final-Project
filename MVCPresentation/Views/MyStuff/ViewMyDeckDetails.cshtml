@@ -4,9 +4,11 @@
 }
 <h1>@ViewBag.Title</h1>
 
+@Html.ActionLink("Add Deck to Match", "AddDeckToMatch", "MyStuff", new { deckID = Model.Deck.DeckID }, new { @class = "btn btn-primary", style = "float:right;" })
+
 @if (Model.Cards.Count() == 0)
 {
-    <hr />
+   
     if (TempData["Message"] != null)
     {
         <caption>@TempData["Message"]</caption>

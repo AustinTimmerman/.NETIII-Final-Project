@@ -1,0 +1,49 @@
+﻿@model MVCPresentation.Models.DeckViewModel
+@{
+    ViewBag.Title = "ViewAllDecks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddDeckToMatch", "MyStuff", FormMethod.Post))
+{
+    <div class="text-center">
+        <div class="justify-content-between">
+            <h2>Add @Model.Deck.DeckName to match</h2>
+        </div>
+        <hr />
+        @if (TempData["Message"] != null)
+        {
+            <caption>@TempData["Message"]</caption>
+        }
+        <dl>
+
+            <dt>
+                Match
+            </dt>
+            @Html.HiddenFor(model => model.Deck.DeckID)
+            <dd>
+                @Html.DropDownListFor(x => Model.SelectedMatch, new SelectList(Model.Matches, "MatchID", "MatchName"), htmlAttributes: new { @class = "btn btn-default" })
+
+            </dd>
+
+
+            <dt>
+                <br />
+                Winner
+            </dt>
+
+            <dd>
+                @*<input type="checkbox" id="isOwned" name="IsOwned" class="chkclass" value="@Model.IsOwned" />*@
+                @Html.CheckBoxFor(model => model.Winner)
+            </dd>
+        </dl>
+        <br />
+        @*onclick="location.href='@Url.Action("EditCardDetails", "Cards", new { cardID = Model.CardID, owned = Model.IsOwned, wishlisted = Model.IsWishlisted })'"*@
+        <input type="submit" value="Save" class="btn-primary" name="save" id="save" />
+        <input type="submit" value="Cancel" class="btn-danger" name="cancel" id="cancel" formnovalidate="formnovalidate" />
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

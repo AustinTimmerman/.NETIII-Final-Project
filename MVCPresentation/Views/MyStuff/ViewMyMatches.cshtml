@@ -22,7 +22,7 @@
         @foreach (DataObjects.MatchVM match in Model.Matches)
         {
             <tr>
-                <td>@Html.ActionLink(match.MatchName, "ViewMatchDetails", "Matches", new { matchID = match.MatchID, matchName = match.MatchName }, null)</td>
+                <td>@Html.ActionLink(match.MatchName, "ViewMyMatchDetails", "MyStuff", new { matchID = match.MatchID, matchName = match.MatchName }, null)</td>
                 @if (match.IsPublic)
                 {
                     <td><input type="checkbox" disabled checked /></td>

@@ -1,0 +1,51 @@
+﻿@model MVCPresentation.Models.MatchViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@ViewBag.Title</h1>
+
+
+@if (Model.Decks.Count() == 0)
+{
+    if (TempData["Message"] != null)
+    {
+        <caption>@TempData["Message"]</caption>
+    }
+    <h4 class="text-center">No decks yet...</h4>
+}
+else
+{
+<table class="table">
+    @if (TempData["Message"] != null)
+    {
+        <caption>@TempData["Message"]</caption>
+    }
+    <thead>
+        <tr>
+            <th scope="col">Deck Name</th>
+            <th scope="col">Winner</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataObjects.MatchDeck deck in Model.Decks)
+        {
+            <tr>
+                <td>@Html.ActionLink(deck.DeckName, "ViewDeckDetails", "Decks", new { deckID = deck.DeckID, deckName = deck.DeckName }, null)</td>
+                @if (deck.Winner)
+                {
+                    <td><input type="checkbox" disabled checked /></td>
+                }
+                else
+                {
+                    <td><input type="checkbox" disabled /></td>
+                }
+                <td>
+                    @*@Html.ActionLink("Edit", "EditMatchDeck", "MyStuff", new { deckID = deck.DeckID, matchID = deck.MatchID }, new { @class = "btn btn-info" })*@
+                    @Html.ActionLink("Remove", "DeleteMatchDeck", "MyStuff", new { confirm = true, deckID = deck.DeckID, matchID = deck.MatchID, winner = deck.Winner }, new { onclick = "return confirm('Do you really want to delete this deck?')", @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+}

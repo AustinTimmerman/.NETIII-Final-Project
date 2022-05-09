@@ -277,6 +277,9 @@
     <Content Include="Views\Cards\AddCardToDeck.cshtml" />
     <Content Include="Views\MyStuff\EditCard.cshtml" />
     <Content Include="Views\MyStuff\ViewMyDeckDetails.cshtml" />
+    <Content Include="Views\MyStuff\AddDeckToMatch.cshtml" />
+    <Content Include="Views\MyStuff\ViewMyMatchDetails.cshtml" />
+    <Content Include="Views\MyStuff\EditMatchDeck.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
